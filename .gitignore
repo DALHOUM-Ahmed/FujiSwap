@@ -2,10 +2,12 @@
 /node_modules
 
 #sdk
-/forks
+
 
 # production
 /build
+
+/forks/sdk copy
 
 # misc
 .secret
