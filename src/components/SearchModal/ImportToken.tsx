@@ -17,7 +17,7 @@ import { useActiveWeb3React } from 'hooks';
 import { ExternalLink } from '../../theme/components';
 import { useCombinedInactiveList } from 'state/lists/hooks';
 import ListLogo from 'components/ListLogo';
-import { PaddedColumn, Checkbox } from './styleds';
+import { PaddedColumn } from './styleds';
 
 const Wrapper = styled.div`
   position: relative;
@@ -132,7 +132,7 @@ export function ImportToken({ tokens, onBack, onDismiss, handleCurrencySelect }:
             </TYPE.body>
           </AutoColumn>
           <AutoRow justify="center" style={{ cursor: 'pointer' }} onClick={() => setConfirmed(!confirmed)}>
-            <Checkbox
+            {/* <Checkbox
               className=".understand-checkbox"
               name="confirmed"
               type="checkbox"
@@ -141,7 +141,17 @@ export function ImportToken({ tokens, onBack, onDismiss, handleCurrencySelect }:
             />
             <TYPE.body ml="10px" fontSize="16px" color={fromLists ? theme.yellow2 : theme.red1} fontWeight={500}>
               I understand
-            </TYPE.body>
+            </TYPE.body> */}
+            <ButtonPrimary
+              disabled={confirmed}
+              altDisabledStyle={true}
+              borderRadius="20px"
+              padding="10px 1rem"
+              onClick={() => setConfirmed(!confirmed)}
+              className=".token-dismiss-button"
+            >
+              I understand
+            </ButtonPrimary>
           </AutoRow>
         </Card>
         <ButtonPrimary

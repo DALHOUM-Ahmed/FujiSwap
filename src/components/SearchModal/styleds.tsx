@@ -52,7 +52,8 @@ export const FadedSpan = styled(RowFixed)`
 `;
 export const Checkbox = styled.input`
   border: 1px solid ${({ theme }) => theme.red3};
-  height: 20px;
+  height: 30px;
+  width: 30px;
   margin: 0;
 `;
 

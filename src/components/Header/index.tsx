@@ -6,7 +6,7 @@ import { darken } from 'polished';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 
-import Logo from '../../assets/svg/logo.svg';
+import Logo from '../../assets/svg/logo.png';
 //import LogoDark from '../../assets/svg/logo_white.svg';
 import { useActiveWeb3React } from '../../hooks';
 import { useDarkModeManager } from '../../state/user/hooks';

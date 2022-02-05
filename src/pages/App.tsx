@@ -18,7 +18,7 @@ import RemoveLiquidity from './RemoveLiquidity';
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects';
 import Swap from './Swap';
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly } from './Swap/redirects';
-import ethereum from "../assets/images/backgrounds/ethereum.jpg";
+import ethereum from "../assets/images/backgrounds/ethereum.png";
 
 const AppWrapper = styled.div`
   min-height: 100vh;
