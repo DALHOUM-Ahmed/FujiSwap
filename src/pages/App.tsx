@@ -42,8 +42,9 @@ const HeaderWrapper = styled.div`
 
 const BodyWrapper = styled.div`
   width: 100%;
-  min-height: 70vh;
-  padding: 3rem 0;
+  min-height: 55vh;
+  padding: 2rem 0;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;

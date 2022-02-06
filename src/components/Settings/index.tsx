@@ -34,8 +34,8 @@ const StyledMenuIcon = styled(Settings)`
 `;
 
 const StyledCloseIcon = styled(X)`
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
   :hover {
     cursor: pointer;
   }
@@ -66,6 +66,8 @@ const StyledMenuButton = styled.button`
 
   svg {
     margin-top: 2px;
+    height: 25px;
+    width: 25px;
   }
 `;
 const EmojiWrapper = styled.div`
@@ -97,11 +99,11 @@ const MenuFlyout = styled.span`
   font-size: 1rem;
   position: absolute;
   top: 3rem;
-  right: 0rem;
+  right: -1rem;
   z-index: 100;
 
   ${({ theme }) => theme.mediaWidth.upToMedium`
-    min-width: 18.125rem;
+    min-width: 18.5rem;
   `};
 `;
 

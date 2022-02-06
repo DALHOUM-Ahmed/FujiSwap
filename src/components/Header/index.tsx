@@ -91,7 +91,7 @@ const HeaderLinks = styled(Row)`
   // `};
 
   ${({ theme }) => theme.mediaWidth.upToSmall`
-    position: fixed;
+    position: absolute;
     bottom: 0;
     padding: 1rem;
     width: 100%;
@@ -99,6 +99,7 @@ const HeaderLinks = styled(Row)`
     transform: translateX(-50%);
     border-radius: 0;
     border-top: 1px solid ${({ theme }) => theme.bg3};
+    margin-bottom: 0;
   `};
 `;
 
@@ -248,6 +249,7 @@ export const StyledMenuButton = styled.button`
 `;
 
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
+  [ChainId.MAINNET]: 'Ethereum',
   [ChainId.RINKEBY]: 'Rinkeby',
   [ChainId.ROPSTEN]: 'Ropsten',
   [ChainId.GÖRLI]: 'Goerli',
@@ -265,7 +267,7 @@ export default function Header() {
       <HeaderRow>
         <Title href=".">
           <Icon>
-            <img width={'155px'} src={darkMode ? Logo : Logo} alt="logo" />
+            <img width={'135px'} height={'36px'} src={darkMode ? Logo : Logo} alt="logo" />
           </Icon>
         </Title>
       </HeaderRow>
