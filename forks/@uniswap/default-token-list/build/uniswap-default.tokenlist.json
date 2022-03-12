@@ -1,0 +1,27 @@
+{
+  "name": "Uniswap Default List",
+  "timestamp": "2021-01-21T23:57:10.982Z",
+  "version": {
+    "major": 2,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "ipfs://QmNa8mQkrNKp1WEEeGjFezDmDeodkWRevGFN8JCV7b4Xir",
+  "keywords": [
+    "uniswap",
+    "default"
+  ],
+  "tokens": [
+    
+
+    {
+      "name": "Shiba Samurai",
+      "address": "0x275EB4F541b372EfF2244A444395685C32485368",
+      "symbol": "SHIBURAI",
+      "decimals": 9,
+      "chainId": 1,
+      "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x960b236A07cf122663c4303350609A66A7B288C0/logo.png"
+    }
+  ]
+}

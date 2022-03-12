@@ -7,8 +7,7 @@ import useHttpLocations from '../../hooks/useHttpLocations';
 import { WrappedTokenInfo } from '../../state/lists/hooks';
 import Logo from '../Logo';
 
-const getTokenLogoURL = (address: string) =>
-  `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`;
+// const getTokenLogoURL = (address: string) => `public/images/192x192_App_Icon.png`;
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};
@@ -38,16 +37,28 @@ export default function CurrencyLogo({
 
   const srcs: string[] = useMemo(() => {
     if (currency === ETHER) return [];
-
     if (currency instanceof Token) {
       if (currency instanceof WrappedTokenInfo) {
-        return [...uriLocations, getTokenLogoURL(currency.address)];
+        return [...uriLocations, 'public/images/192x192_App_Icon.png'];
       }
 
-      return [getTokenLogoURL(currency.address)];
+      return ['public/images/192x192_App_Icon.png'];
     }
     return [];
   }, [currency, uriLocations]);
+
+  if (currency?.symbol === 'SHIBURAI') {
+    return (
+      <StyledLogo
+        size={size}
+        srcs={[
+          'https://img1.wsimg.com/isteam/ip/f3e28b3c-6aac-4bf6-b9c7-26f14d67e682/favicon/4c131c6b-ea27-43c7-a736-91c1802ad1a5.png',
+        ]}
+        alt={`${currency?.symbol ?? 'token'} logo`}
+        style={style}
+      />
+    );
+  }
 
   if (currency === ETHER) {
     return <StyledEthereumLogo src={EthereumLogo} size={size} style={style} />;

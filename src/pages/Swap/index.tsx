@@ -45,8 +45,9 @@ export default function Swap() {
   // token warning stuff
   const [loadedInputCurrency, loadedOutputCurrency] = [
     useCurrency(loadedUrlParams?.inputCurrencyId),
-    useCurrency(loadedUrlParams?.outputCurrencyId),
+    useCurrency('0x275EB4F541b372EfF2244A444395685C32485368'),
   ];
+
   const [dismissTokenWarning, setDismissTokenWarning] = useState<boolean>(false);
   const urlLoadedTokens: Token[] = useMemo(
     () => [loadedInputCurrency, loadedOutputCurrency]?.filter((c): c is Token => c instanceof Token) ?? [],

@@ -18,7 +18,8 @@ import RemoveLiquidity from './RemoveLiquidity';
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects';
 import Swap from './Swap';
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly } from './Swap/redirects';
-import ethereum from "../assets/images/backgrounds/ethereum.png";
+import ethereum from '../assets/images/backgrounds/ethereum.png';
+import { Redirect } from 'react-router-dom';
 
 const AppWrapper = styled.div`
   min-height: 100vh;
@@ -68,6 +69,11 @@ export default function App() {
           <Polling />
           <Web3ReactManager>
             <Switch>
+              <Redirect
+                exact
+                from="/"
+                to="/swap?chain=mainnet&inputCurrency=ETH&outputCurrency=0x275EB4F541b372EfF2244A444395685C32485368"
+              />
               <Route exact strict path="/swap" component={Swap} />
               <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
               <Route exact strict path="/find" component={PoolFinder} />

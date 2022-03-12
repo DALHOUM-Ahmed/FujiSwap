@@ -82,13 +82,12 @@
   "resolutions": {
     "@walletconnect/web3-provider": "1.4.1"
   },
-
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "postinstall": "rm -rf ./node_modules/@uniswap/sdk; cp -rf ./forks/@uniswap/sdk ./node_modules/@uniswap/sdk",
+    "postinstall": "rm -rf ./node_modules/@uniswap/sdk; cp -rf ./forks/@uniswap/sdk ./node_modules/@uniswap/sdk; rm -rf ./node_modules/@uniswap/default-token-list; cp -rf ./forks/@uniswap/default-token-list ./node_modules/@uniswap/default-token-list;",
     "deploy": "gh-pages -d build"
   },
   "dependencies": {
