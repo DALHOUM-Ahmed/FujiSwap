@@ -1,12 +1,5 @@
-# FujiSwap
 
-### Ropsten
-
-- Factory: 0x1258A4EEEDF6DEd4ca30a88B9a808E4E316A3079
-- Router: 0x400bF286996cF5CC5208b090e71C7FDE640f7D25
-- Pair hash: 0x6781ca854ccb216cc8a4ae9c14b234f0f4e9e3a64c3e69ba0e8139ea085cfd97
-
-### ETH Mainnet
+### ETH Mainnet Uniswap contracts
 
 - Factory: 0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f
 - Router: 0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D
