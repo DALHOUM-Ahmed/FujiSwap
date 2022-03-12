@@ -1,15 +1,15 @@
 import { Currency, Pair } from '@uniswap/sdk';
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { darken } from 'polished';
 import { useCurrencyBalance } from '../../state/wallet/hooks';
-import CurrencySearchModal from '../SearchModal/CurrencySearchModal';
+// import CurrencySearchModal from '../SearchModal/CurrencySearchModal';
 import CurrencyLogo from '../CurrencyLogo';
 import DoubleCurrencyLogo from '../DoubleLogo';
 import { RowBetween } from '../Row';
 import { TYPE } from '../../theme';
 import { Input as NumericalInput } from '../NumericalInput';
-import { ReactComponent as DropDown } from '../../assets/images/dropdown.svg';
+// import { ReactComponent as DropDown } from '../../assets/images/dropdown.svg';
 
 import { useActiveWeb3React } from '../../hooks';
 import { useTranslation } from 'react-i18next';
@@ -31,16 +31,10 @@ const CurrencySelect = styled.button`
   color: ${({ theme }) => theme.text1};
   border-radius: 12px;
   outline: none;
-  cursor: pointer;
   user-select: none;
   border: none;
   padding: 0 0.5rem;
   transition: 0.2s;
-
-  :focus,
-  :hover {
-    background-color: ${({ theme }) => theme.bg4};
-  }
 `;
 
 const LabelRow = styled.div`
@@ -62,15 +56,15 @@ const Aligner = styled.span`
   justify-content: space-between;
 `;
 
-const StyledDropDown = styled(DropDown)`
-  margin: 0 0.25rem 0 0.5rem;
-  height: 35%;
+// const StyledDropDown = styled(DropDown)`
+//   margin: 0 0.25rem 0 0.5rem;
+//   height: 35%;
 
-  path {
-    stroke: ${({ theme }) => theme.text1};
-    stroke-width: 1.5px;
-  }
-`;
+//   path {
+//     stroke: ${({ theme }) => theme.text1};
+//     stroke-width: 1.5px;
+//   }
+// `;
 
 const InputPanel = styled.div<{ hideInput?: boolean }>`
   ${({ theme }) => theme.flexColumnNoWrap}
@@ -152,14 +146,14 @@ export default function CurrencyInputPanel({
 }: CurrencyInputPanelProps) {
   const { t } = useTranslation();
 
-  const [modalOpen, setModalOpen] = useState(false);
+  // const [modalOpen, setModalOpen] = useState(false);
   const { account } = useActiveWeb3React();
   const selectedCurrencyBalance = useCurrencyBalance(account ?? undefined, currency ?? undefined);
   const theme = useTheme();
 
-  const handleDismissSearch = useCallback(() => {
-    setModalOpen(false);
-  }, [setModalOpen]);
+  // const handleDismissSearch = useCallback(() => {
+  //   setModalOpen(false);
+  // }, [setModalOpen]);
 
   return (
     <InputPanel id={id}>
@@ -203,11 +197,11 @@ export default function CurrencyInputPanel({
           )}
           <CurrencySelect
             className="open-currency-select-button"
-            onClick={() => {
-              if (!disableCurrencySelect) {
-                setModalOpen(true);
-              }
-            }}
+            // onClick={() => {
+            //   if (!disableCurrencySelect) {
+            //     setModalOpen(true);
+            //   }
+            // }}
           >
             <Aligner>
               {pair ? (
@@ -228,12 +222,11 @@ export default function CurrencyInputPanel({
                     : currency?.symbol) || t('Token')}
                 </StyledTokenName>
               )}
-              {!disableCurrencySelect && <StyledDropDown />}
             </Aligner>
           </CurrencySelect>
         </InputRow>
       </Container>
-      {!disableCurrencySelect && onCurrencySelect && (
+      {/* {false && !disableCurrencySelect && onCurrencySelect && (
         <CurrencySearchModal
           isOpen={modalOpen}
           onDismiss={handleDismissSearch}
@@ -242,7 +235,7 @@ export default function CurrencyInputPanel({
           otherSelectedCurrency={otherCurrency}
           showCommonBases={showCommonBases}
         />
-      )}
+      )} */}
     </InputPanel>
   );
 }
