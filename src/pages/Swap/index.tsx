@@ -43,16 +43,16 @@ export default function Swap() {
   const loadedUrlParams = useDefaultsFromURLSearch();
 
   // token warning stuff
-  const [loadedInputCurrency, loadedOutputCurrency] = [
-    useCurrency(loadedUrlParams?.inputCurrencyId),
-    useCurrency('0x275EB4F541b372EfF2244A444395685C32485368'),
-  ];
+  const [loadedInputCurrency] = [useCurrency(loadedUrlParams?.inputCurrencyId)];
+  const loadedOutputCurrency = useCurrency('0x275EB4F541b372EfF2244A444395685C32485368');
 
   const [dismissTokenWarning, setDismissTokenWarning] = useState<boolean>(false);
-  const urlLoadedTokens: Token[] = useMemo(
+  let urlLoadedTokens: Token[] = useMemo(
     () => [loadedInputCurrency, loadedOutputCurrency]?.filter((c): c is Token => c instanceof Token) ?? [],
     [loadedInputCurrency, loadedOutputCurrency]
   );
+
+  // console.log('loadedOutputCurrency', loadedOutputCurrency !== undefined ? 1 : 0);
   const handleConfirmTokenWarning = useCallback(() => {
     setDismissTokenWarning(true);
   }, []);

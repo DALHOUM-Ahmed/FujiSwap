@@ -69,11 +69,9 @@ export default function App() {
           <Polling />
           <Web3ReactManager>
             <Switch>
-              <Redirect
-                exact
-                from="/"
-                to="/swap?chain=mainnet&inputCurrency=ETH&outputCurrency=0x275EB4F541b372EfF2244A444395685C32485368"
-              />
+              <Redirect exact from="/#/swap" to="/" />
+              <Redirect exact from="/add" to="/add/ETH/0x275EB4F541b372EfF2244A444395685C32485368" />
+              <Redirect exact from="/remove" to="/remove/ETH/0x275EB4F541b372EfF2244A444395685C32485368" />
               <Route exact strict path="/swap" component={Swap} />
               <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
               <Route exact strict path="/find" component={PoolFinder} />
